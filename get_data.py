@@ -1,8 +1,9 @@
+import json
+import re
+
+import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import re
-import json
-
 
 def get_currencies(num_page=1):
     driver = webdriver.Chrome()
@@ -32,40 +33,49 @@ def add_way():
     print('Name: ', end='')
     name = input()
 
-    print('Buying cost: ', end='')
-    buying = int(input())
+    print('Buying cost (in $): ', end='')
+    buying = float(input())
 
-    print('Power: ', end='')
-    power = int(input())
-    energy = power * 24 * 365
-    energy_cost = energy * 0.15
+    print('Power (in W): ', end='')
+    power = float(input()) / 1000
+    energy = power * 24
+    energy_cost = energy * 0.17
 
-    print('Euros per year: ', end='')
-    earned = int(input())
+    print('Earnings per day (in $): ', end='')
+    earned = float(input())
     profit = earned - energy_cost
 
-    with open('data/data.json', 'w+') as fp:
+    with open('data/data.json', 'r') as fp:
         data = json.load(fp)
         if currency not in data:
             data[currency] = {}
-        way = f'way{1 + data[currency]}'
+        way = f'way{1 + len(data[currency])}'
         
         data[currency][way] = {
-                'name': name,
-                'buying_price (in €)': buying,
-                'power (in kW)': power,
-                'energy (in kWh/year)': energy,
-                'energy_cost (in €)': energy_cost,
-                'earned_per_year (in €)': earned,
-                'potential_profit (in €)': profit
+                'Name': name,
+                'Buying price (in $)': buying,
+                'Power (in kW)': power,
+                'Energy (in kWh/day)': energy,
+                'Energy cost (in $/day)': energy_cost,
+                'Earnings (in $/day)': earned,
+                'Potential profit (in $/day)': profit
                 }
+
+        print(pd.DataFrame(data).iloc[-1])
+        
+        print('Do you want to write that information ? ([y]/N) : ', end='')
+        write = input() != 'N'
+
+    if write:
+        with open('data/data.json', 'w') as fp:
+            json.dump(data, fp)
 
 
 def main():
     print('Fetch currencies ? (Y/[n]) : ', end='')
     fetch = input()
 
-    if fetch.lower == 'Y':
+    if fetch == 'Y':
         currencies = get_currencies()
     
         with open('data/currencies.json', 'w') as fp:
