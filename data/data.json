@@ -1,1 +1,69 @@
-{}
+{
+    "Bitcoin Cash": {
+        "way1": {
+            "Name": "Poolin Whatsminer M20S / 68T",
+            "Buying price (in $)": 1529.0,
+            "Power (in kW)": 3.36,
+            "Energy (in kWh/day)": 80.64,
+            "Energy cost (in $/day)": 13.708800000000002,
+            "Earnings (in $/day)": 10.27,
+            "Potential profit (in $/day)": -3.4388000000000023
+        },
+        "way2": {
+            "Name": "Poolin Inno T3+ / 57T",
+            "Buying price (in $)": 1689.35,
+            "Power (in kW)": 3.3,
+            "Energy (in kWh/day)": 79.19999999999999,
+            "Energy cost (in $/day)": 13.463999999999999,
+            "Earnings (in $/day)": 8.59,
+            "Potential profit (in $/day)": -4.873999999999999
+        },
+        "way3": {
+            "Name": "Poolin Antminer S17 Pro / 53T",
+            "Buying price (in $)": 1779.0,
+            "Power (in kW)": 2.094,
+            "Energy (in kWh/day)": 50.256,
+            "Energy cost (in $/day)": 8.543520000000001,
+            "Earnings (in $/day)": 7.99,
+            "Potential profit (in $/day)": -0.5535200000000007
+        },
+        "way4": {
+            "Name": "Poolin Avalon A1066",
+            "Buying price (in $)": 1095.0,
+            "Power (in kW)": 3.25,
+            "Energy (in kWh/day)": 78.0,
+            "Energy cost (in $/day)": 13.260000000000002,
+            "Earnings (in $/day)": 7.53,
+            "Potential profit (in $/day)": -5.730000000000001
+        },
+	"way5": {
+            "Name": "Poolin Bitmain Antminer S19 Pro / 110T",
+            "Buying price (in $)": 2860.0,
+            "Power (in kW)": 3.25,
+            "Energy (in kWh/day)": 78.0,
+            "Energy cost (in $/day)": 13.260000000000002,
+            "Earnings (in $/day)": 16.52,
+            "Potential profit (in $/day)": 3.259999999999998
+        }
+    },
+    "Litecoin": {
+        "way1": {
+            "Name": "Poolin Inno A4+",
+            "Buying price (in $)": 1180.0,
+            "Power (in kW)": 0.75,
+            "Energy (in kWh/day)": 18.0,
+            "Energy cost (in $/day)": 3.06,
+            "Earnings (in $/day)": 1.25,
+            "Potential profit (in $/day)": -1.81
+        },
+        "way2": {
+            "Name": "Poolin Antminer L3+",
+            "Buying price (in $)": 116.0,
+            "Power (in kW)": 0.8,
+            "Energy (in kWh/day)": 19.200000000000003,
+            "Energy cost (in $/day)": 3.2640000000000007,
+            "Earnings (in $/day)": 1.01,
+            "Potential profit (in $/day)": -2.2540000000000004
+        }
+    }
+}
